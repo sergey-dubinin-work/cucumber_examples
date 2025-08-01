@@ -2,6 +2,10 @@ plugins{
     id 'java-library'
 }
 
+def jUnitVersion = '6.0.0-M2',
+    cucumberJavaVersion = "7.27.0",
+    assertJVersion = "4.0.0-M1"
+
 repositories {
     mavenCentral()
 }
@@ -9,6 +13,14 @@ repositories {
 dependencies {
     testImplementation (
             "org.slf4j:slf4j-simple:2.0.17",
+            "org.junit.jupiter:junit-jupiter:$jUnitVersion",
+            "io.cucumber:cucumber-java:$cucumberJavaVersion",
+            "io.cucumber:cucumber-junit:$cucumberJavaVersion",
+            "io.cucumber:cucumber-junit-platform-engine:$cucumberJavaVersion",
+            "org.assertj:assertj-core:$assertJVersion"
+    )
+    testRuntimeOnly(
+            "org.junit.platform:junit-platform-launcher:$jUnitVersion"
     )
 }
 
