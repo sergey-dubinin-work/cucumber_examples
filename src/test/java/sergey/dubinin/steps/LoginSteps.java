@@ -37,10 +37,10 @@ public class LoginSteps {
     }
 
     @Тогда("он должен увидеть сообщение {string}")
-    public void checkMessage(String message){
-        System.out.printf("> > > Ожидаемое сообщение: %s\n", resultMessage);
-        System.out.printf("> > > Фактическое сообщение: %s\n", message);
-        assertThat(message).isEqualTo(resultMessage);
+    public void checkMessage(String expectedMessage){
+        System.out.printf("> > > Ожидаемое сообщение: %s\n", expectedMessage);
+        System.out.printf("> > > Фактическое сообщение: %s\n", resultMessage);
+        assertThat(expectedMessage).isEqualTo(resultMessage);
     }
 
 }
