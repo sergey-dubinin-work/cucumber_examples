@@ -1,9 +1,6 @@
 package sergey.dubinin.steps;
 
-import io.cucumber.java.ru.Дано;
-import io.cucumber.java.ru.И;
-import io.cucumber.java.ru.Когда;
-import io.cucumber.java.ru.Тогда;
+import io.cucumber.java.ru.*;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
@@ -12,6 +9,16 @@ public class LoginSteps {
     private String username;
     private String password;
     private String resultMessage;
+
+    @Допустим("пользователь открывает браузер")
+    public void openBrowser(){
+        System.out.println("> > > Браузер открыт");
+    }
+
+    @И("пользователь открывает главную страницу сайта")
+    public void openMainPage(){
+        System.out.println("> > > Открыта главная страница сайта");
+    }
 
     @Дано("пользователь открывает страницу входа")
     public void openLoginPage(){
